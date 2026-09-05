@@ -1,0 +1,10 @@
+﻿{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "edit_file|write_file",
+        "hooks": [{ "type": "command", "command": "powershell -ExecutionPolicy Bypass -File .agents/hooks/gate-tests.ps1" }]
+      }
+    ]
+  }
+}

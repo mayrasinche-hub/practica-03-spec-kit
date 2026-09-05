@@ -1,4 +1,4 @@
-﻿"""Lógica de conversión termodinámica y validación física de temperatura."""
+"""Lógica de conversión termodinámica y validación física de temperatura."""
 
 from __future__ import annotations
 
@@ -101,3 +101,10 @@ def execute_conversion(
 
     reading = TemperatureReading(value=numeric_value, unit=source_unit)
     return convert_temperature(reading, target_unit)
+
+
+def convert(value: float | str, from_unit: str, to_unit: str) -> float:
+    """Convierte un valor de temperatura entre unidades y retorna el valor numérico redondeado."""
+    result = execute_conversion(str(value), str(from_unit), str(to_unit))
+    return result.converted_value
+

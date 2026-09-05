@@ -1,4 +1,4 @@
-﻿"""Paquete conversor de temperatura CLI y biblioteca reutilizable.
+"""Paquete conversor de temperatura CLI y biblioteca reutilizable.
 
 Exporta las funciones y modelos principales para realizar conversiones
 termodinámicas exactas entre Celsius, Fahrenheit y Kelvin.
@@ -16,6 +16,7 @@ from src.models import (
     parse_unit,
 )
 from src.converter import (
+    convert,
     convert_temperature,
     execute_conversion,
     from_celsius,
@@ -34,6 +35,7 @@ __all__ = [
     "TemperatureConverterError",
     "TemperatureReading",
     "TemperatureUnit",
+    "convert",
     "convert_temperature",
     "execute_conversion",
     "from_celsius",

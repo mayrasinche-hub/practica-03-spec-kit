@@ -1,20 +1,21 @@
-﻿"""Módulo de interfaz de línea de comandos (CLI) para el conversor de temperatura."""
+"""Módulo de interfaz de línea de comandos (CLI) para el conversor de temperatura."""
 
 from __future__ import annotations
 
 import argparse
+import io
 import sys
 
 # Asegurar codificación UTF-8 para símbolos como °C y °F en cualquier plataforma
 if sys.stdout and hasattr(sys.stdout, "reconfigure"):
     try:
         sys.stdout.reconfigure(encoding="utf-8")
-    except Exception:
+    except (AttributeError, io.UnsupportedOperation):
         pass
 if sys.stderr and hasattr(sys.stderr, "reconfigure"):
     try:
         sys.stderr.reconfigure(encoding="utf-8")
-    except Exception:
+    except (AttributeError, io.UnsupportedOperation):
         pass
 
 from src.converter import execute_conversion
